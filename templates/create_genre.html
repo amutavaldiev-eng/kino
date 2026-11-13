@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="form">
+    <h1>Add Genre</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label>Genre Name</label>
+        <input type="text" name="name" placeholder="Enter genre name" required>
+        <button type="submit">Add Genre</button>
+    </form>
+</div>
+{% endblock %}

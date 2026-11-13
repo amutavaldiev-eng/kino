@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>My Comments</h1>
+<form method="GET" action="http://127.0.0.1:8000/comments/" class="srch">
+    <input type="text" name="username" placeholder="Enter your username" required>
+    <button type="submit">Search</button>
+</form>
+{% for comment in comments %}
+<div class="comm">
+    <h3>{{comment.username}}</h3>
+    <p>{{comment.text}}</p>
+    <p>Movie: {{comment.movie.name}}</p>
+</div>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>All Genres</h1>
+<a href="http://127.0.0.1:8000/create_genre/" class="btn">Add Genre</a>
+<br>
+<br>
+<div class="grid">
+    {% for genre in genres %}
+    <div class="genre">
+        <h3>{{ genre.name }}</h3>
+        <a href="http://127.0.0.1:8000/genre/{{genre.id}}/" class="btn">View Movies</a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

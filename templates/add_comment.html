@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="form">
+    <h1>Add Comment</h1>
+    <h3>{{movie.name}}</h3>
+    <form method="POST">
+        {% csrf_token %}
+        <label>Username</label>
+        <input type="text" name="username" required>
+        <label>Comment</label>
+        <textarea name="text" required></textarea>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>All Movies</h1>
+<form method="GET" class="srch">
+    <input type="text" name="q" placeholder="Search movie or genre" value="{{query}}">
+    <button type="submit">Search</button>
+</form>
+<a href="http://127.0.0.1:8000/create_movie/" class="btn"> Add Movie</a>
+<br><br>
+<div class="grid">
+    {% for movie in movies %}
+    <div class="card">
+        <img src="{{movie.image.url}}" alt="{{movie.name}}">  
+
+        <h3>{{movie.name}}</h3>
+        <p>Genre: {{movie.genre.name}}</p>
+        <p>{{movie.caption}}</p>
+        <a href="http://127.0.0.1:8000/movie/{{movie.id}}/" class="btn"> Details</a>
+        <a href="http://127.0.0.1:8000/update_movie/{{movie.id}}/" class="btn">Edit</a>
+        <a href="http://127.0.0.1:8000/delete_movie/{{movie.id}}/" class="btn">Delete</a>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
